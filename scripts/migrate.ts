@@ -1,9 +1,11 @@
-import { migrate } from "drizzle-orm/bun-sqlite/migrator";
-
-import { drizzle } from "drizzle-orm/bun-sqlite";
-import { Database } from "bun:sqlite";
+import { migrate } from "drizzle-orm/libsql/migrator";
+import { drizzle } from "drizzle-orm/libsql";
+import { createClient } from "@libsql/client";
 import { metadataEnv } from "../env.js";
 
-const sqlite = new Database(metadataEnv.DB_FILE);
-const db = drizzle(sqlite);
+const client = createClient({
+  url: metadataEnv.DB_FILE,
+});
+
+const db = drizzle(client);
 migrate(db, { migrationsFolder: "./drizzle" });
