@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken";
-import { type WalletJWT } from "../types/index.js";
-import { metadataEnv } from "../env.js";
+import { type WalletJWT } from "../types";
+import { metadataEnv } from "../env";
 import type { Context, Next } from "hono";
-import type { WalletContext } from "../types/index.js";
+import type { WalletContext } from "../types";
 
 const salt = metadataEnv.JWT_SALT || "SolportSalt";
+
 
 /**
  * Verifies that the JWT token is present and binds the public key to

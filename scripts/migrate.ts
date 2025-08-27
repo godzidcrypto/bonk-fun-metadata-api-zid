@@ -1,20 +1,9 @@
-import { migrate } from "drizzle-orm/libsql/migrator";
-import { drizzle } from "drizzle-orm/libsql";
-import { createClient } from "@libsql/client";
-import { metadataEnv } from "../env.js";
+import { migrate } from "drizzle-orm/bun-sqlite/migrator";
 
-console.log("Starting migration script...");
-console.log("DB_FILE:", metadataEnv.DB_FILE);
+import { drizzle } from "drizzle-orm/bun-sqlite";
+import { Database } from "bun:sqlite";
+import { metadataEnv } from "../env";
 
-const client = createClient({
-  url: metadataEnv.DB_FILE,
-});
-
-console.log("Created libsql client");
-
-const db = drizzle(client);
-console.log("Created drizzle instance");
-
-console.log("Running migrations from ./drizzle folder...");
+const sqlite = new Database(metadataEnv.DB_FILE);
+const db = drizzle(sqlite);
 migrate(db, { migrationsFolder: "./drizzle" });
-console.log("Migration completed!");
