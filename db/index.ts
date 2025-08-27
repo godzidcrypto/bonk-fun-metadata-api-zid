@@ -1,11 +1,11 @@
-import 'dotenv/config';
-import { drizzle } from 'drizzle-orm/libsql';
-import * as schema from './schema';
-import { metadataEnv } from '../env';
+import "dotenv/config";
+import { drizzle } from "drizzle-orm/libsql";
+import * as schema from "./schema.js";
+import { metadataEnv } from "../env.js";
 
-export const db = drizzle({ 
+export const db = drizzle({
   connection: {
-    url: metadataEnv.DB_FILE
+    url: metadataEnv.DB_FILE,
   },
-  schema
+  schema,
 });
