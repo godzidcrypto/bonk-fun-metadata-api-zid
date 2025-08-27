@@ -1,0 +1,33 @@
+{
+  "name": "bonk-fun-metadata-service",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "bun --hot index.ts",
+    "migrate": "bun run scripts/migrate.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.12",
+    "@types/crypto-js": "^4.2.2",
+    "@types/jsonwebtoken": "^9.0.9",
+    "better-sqlite3": "^11.10.0",
+    "drizzle-kit": "^0.31.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@2toad/profanity": "^3.1.1",
+    "@hono/arktype-validator": "^2.0.0",
+    "@solana/web3.js": "^1.98.2",
+    "arktype": "^2.1.20",
+    "crypto-js": "^4.2.0",
+    "dotenv-flow": "^4.1.0",
+    "drizzle-orm": "^0.43.1",
+    "hono": "^4.7.7",
+    "jsonwebtoken": "^9.0.2",
+    "pinata": "^2.2.0",
+    "tweetnacl": "^1.0.3"
+  }
+}

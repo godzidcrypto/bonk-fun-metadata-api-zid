@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1746719741953,
+      "tag": "0000_military_ken_ellis",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1746720000000,
+      "tag": "0001_contest_registrations",
+      "breakpoints": true
+    }
+  ]
+}
