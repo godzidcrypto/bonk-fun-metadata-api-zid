@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
-import { metadataEnv } from './env';
+import { metadataEnv } from './env.js';
 import jwtRouter from './routes/jwt';
 import userRouter from './routes/user';
 import commentRouter from './routes/comment';
