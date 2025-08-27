@@ -41,7 +41,7 @@ export const contestRegistrationSchema = sqliteTable('contest_registrations', {
   twitter: text('twitter').notNull(),
   profileImageUrl: text('profile_image_url').notNull(),
   walletAddress: text('wallet_address').notNull(),
-  approved: integer('approved', { mode: 'boolean' }).notNull().default(false),
+  approved: integer('approved', { mode: 'boolean' }).notNull().default(0),
   created: integer('created_at', { mode: 'timestamp' })
     .notNull()
     .default(sql`(strftime('%s','now'))`),
@@ -68,7 +68,7 @@ export const jobSchema = sqliteTable('jobs', {
   salaryMax: integer('salary_max'),
   description: text('description'),
   tagsJson: text('tags_json'), // JSON-encoded string array of tags
-  active: integer('active', { mode: 'boolean' }).notNull().default(true),
+  active: integer('active', { mode: 'boolean' }).notNull().default(1),
   created: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`(strftime('%s','now'))`),
 });
 
